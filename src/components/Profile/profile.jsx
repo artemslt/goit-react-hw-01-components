@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   StatsList,
   StatItem,
@@ -9,9 +11,8 @@ import {
   ProfileInfo,
 } from './profile.styled';
 
-export const Profile = ({
-  user: { username, tag, location, avatar, stats },
-}) => {
+export const Profile = ({ username, tag, location, avatar, stats }) => {
+  const { followers, views, likes } = stats;
   return (
     <ProfileWrapper>
       <InfoWrapper>
@@ -25,17 +26,25 @@ export const Profile = ({
       <StatsList>
         <StatItem>
           <span>Followers</span>
-          <StatsAmount>{stats.followers}</StatsAmount>
+          <StatsAmount>{followers}</StatsAmount>
         </StatItem>
         <StatItem>
           <span>Views</span>
-          <StatsAmount>{stats.views}</StatsAmount>
+          <StatsAmount>{views}</StatsAmount>
         </StatItem>
         <StatItem>
           <span>Likes</span>
-          <StatsAmount>{stats.likes}</StatsAmount>
+          <StatsAmount>{likes}</StatsAmount>
         </StatItem>
       </StatsList>
     </ProfileWrapper>
   );
+};
+
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.objectOf(PropTypes.number),
 };
