@@ -28,5 +28,7 @@ export const TableTh = styled.th`
 `;
 
 export const TableTr = styled.tr`
-  background-color: ${props => (props.inr ? 'white' : 'aliceblue')};
+  :nth-child(2n) {
+    background-color: aliceblue;
+  }
 `;

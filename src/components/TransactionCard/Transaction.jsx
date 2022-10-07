@@ -23,7 +23,7 @@ export const TransactionHistory = ({ items }) => {
       <tbody>
         {items.map((item, idx) => {
           return (
-            <TableTr inr={rowIndex(idx)} key={item.id}>
+            <TableTr key={item.id}>
               <TableRowType>{item.type}</TableRowType>
               <TableRow>{item.amount}</TableRow>
               <TableRow>{item.currency}</TableRow>
@@ -33,13 +33,6 @@ export const TransactionHistory = ({ items }) => {
       </tbody>
     </Table>
   );
-};
-
-const rowIndex = idx => {
-  if (idx % 2 === 0) {
-    return true;
-  }
-  return false;
 };
 
 TransactionHistory.propTypes = {
