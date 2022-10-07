@@ -5,7 +5,7 @@ import {
   OflineIndicator,
   OnlineIndicator,
   FriendCardWrapper,
-} from './friendsList.styled';
+} from './FriendsList.styled';
 
 export const FriendsList = ({ friends }) => {
   return (

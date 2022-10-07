@@ -6,7 +6,7 @@ import {
   StatWrapper,
   CardTitle,
   Percentage,
-} from './statistics.styled';
+} from './Statistics.styled';
 
 export const Statistics = ({ stats, title }) => {
   return (

@@ -9,7 +9,7 @@ import {
   ProfileName,
   StatsAmount,
   ProfileInfo,
-} from './profile.styled';
+} from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   const { followers, views, likes } = stats;
