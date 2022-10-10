@@ -21,7 +21,7 @@ export const TransactionHistory = ({ items }) => {
             </TableHead>
 
             <tbody>
-                {items.map((item, idx) => {
+                {items.map(item => {
                     return (
                         <TableTr key={item.id}>
                             <TableRowType>{item.type}</TableRowType>
